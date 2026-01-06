@@ -22,12 +22,14 @@ Astrophysics analysis workflows, scientific computing, and astronomical data pro
 
 ### core
 
-Core tools for fundamental physics research: literature access and paper management.
+Core tools for fundamental physics research: literature access, data repositories, and paper management.
 
 **Skills:**
 - `arxiv` - Search arXiv and download paper source (LaTeX/BibTeX)
 - `inspire` - INSPIRE-HEP search, citations, BibTeX for high-energy physics
 - `ads` - NASA ADS search, citations, BibTeX for astronomy/astrophysics (requires API token)
+- `zenodo` - Search and download datasets, software, and research artifacts with DOIs
+- `hepdata` - Download experimental data tables from HEP publications (cross-sections, limits, etc.)
 
 **Dependencies:** `requests` (`pip install requests`)
 

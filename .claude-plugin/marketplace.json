@@ -5,6 +5,10 @@
   },
   "plugins": [
     {
+      "name": "core",
+      "source": "./plugins/core"
+    },
+    {
       "name": "astro-ph.CO",
       "source": "./plugins/astro-ph.CO"
     }
