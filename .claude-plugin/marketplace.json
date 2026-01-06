@@ -1,0 +1,12 @@
+{
+  "name": "fundamental-physics",
+  "owner": {
+    "name": "williamjameshandley"
+  },
+  "plugins": [
+    {
+      "name": "astro-ph",
+      "source": "./plugins/astro-ph"
+    }
+  ]
+}
