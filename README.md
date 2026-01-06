@@ -1,0 +1,90 @@
+# Fundamental Physics Plugins
+
+Claude Code plugins for fundamental physics analysis, with an initial focus on astrophysics and cosmology.
+
+## Overview
+
+This repository provides skills, tools, and commands for scientific workflows in fundamental physics research. Plugins integrate with Claude Code to assist with:
+
+- Astronomical data processing and analysis
+- Cosmological computations
+- Literature search and management (arXiv, INSPIRE-HEP, NASA ADS)
+- Scientific Python workflows
+
+## Available Plugins
+
+### astro-ph.CO
+
+Astrophysics analysis workflows, scientific computing, and astronomical data processing.
+
+**Skills:**
+- `astrophysics` - Observational astronomy, cosmological analysis, FITS/HDF5 data handling, spectroscopy, photometry
+
+### core (pending)
+
+Core tools for fundamental physics research.
+
+**Skills:**
+- `arxiv` - Search and download arXiv papers
+- `inspire` - INSPIRE-HEP literature search for high-energy physics
+- `ads` - NASA ADS search for astronomy/astrophysics literature
+
+## Installation
+
+Add the plugin marketplace to your Claude Code configuration:
+
+```bash
+claude mcp add-json fundamental-physics '{
+  "type": "local",
+  "path": "/path/to/this/repo"
+}'
+```
+
+Or install individual plugins by adding them to your `~/.claude/plugins.json`.
+
+## Repository Structure
+
+```
+plugins/
+└── <plugin-name>/
+    ├── .claude-plugin/
+    │   └── plugin.json       # Plugin manifest
+    ├── skills/
+    │   └── <skill-name>/
+    │       └── SKILL.md      # Skill documentation
+    ├── commands/             # Optional: slash commands
+    ├── agents/               # Optional: subagents
+    └── scripts/              # Optional: supporting scripts
+```
+
+## Contributing
+
+### Adding a New Skill
+
+1. Create a new directory under the appropriate plugin: `plugins/<plugin>/skills/<skill-name>/`
+2. Add a `SKILL.md` file with YAML frontmatter and documentation
+3. Follow the skill format specification at https://code.claude.com/docs/en/skills
+
+### Skill Review Requirements
+
+All new skills must be reviewed against the official Claude Code skills documentation:
+
+**https://code.claude.com/docs/en/skills**
+
+Reviewers should verify:
+- Correct YAML frontmatter structure (`name`, `description`, `allowed-tools`)
+- Clear trigger conditions in the description
+- Appropriate tool permissions
+- Well-documented usage examples
+- Following progressive disclosure (overview first, details later)
+
+### Creating a New Plugin
+
+1. Create a directory under `plugins/`
+2. Add `.claude-plugin/plugin.json` with plugin metadata
+3. Add skills, commands, or agents as needed
+4. Update the root `marketplace.json` if creating a standalone plugin
+
+## License
+
+MIT
