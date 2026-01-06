@@ -33,16 +33,11 @@ Core tools for fundamental physics research: literature access and paper managem
 
 ## Installation
 
-Add the plugin marketplace to your Claude Code configuration:
+Within Claude Code install directly with:
 
-```bash
-claude mcp add-json fundamental-physics '{
-  "type": "local",
-  "path": "/path/to/this/repo"
-}'
 ```
-
-Or install individual plugins by adding them to your `~/.claude/plugins.json`.
+/plugin marketplace add git@github.com:fundamental-physics/marketplace.git
+```
 
 ## Repository Structure
 
@@ -61,11 +56,27 @@ plugins/
 
 ## Contributing
 
-### Adding a New Skill
+### Adding a New Skill to an Existing Plugin
 
-1. Create a new directory under the appropriate plugin: `plugins/<plugin>/skills/<skill-name>/`
+If your skill fits within an existing plugin's domain, add it there:
+
+1. Create a new directory: `plugins/<plugin>/skills/<skill-name>/`
 2. Add a `SKILL.md` file with YAML frontmatter and documentation
-3. Follow the skill format specification at https://code.claude.com/docs/en/skills
+3. Optionally add supporting scripts in `scripts/`
+
+### Creating a New Plugin
+
+Plugins are organized by arXiv category (e.g., `astro-ph.CO`, `hep-th`, `gr-qc`). To add a new plugin:
+
+1. Create a directory under `plugins/` named after the arXiv category
+2. Add skills, commands, or agents as needed
+3. **Register the plugin in `.claude-plugin/marketplace.json`** by adding an entry to the `plugins` array:
+   ```json
+   {
+     "name": "your-category",
+     "source": "./plugins/your-category"
+   }
+   ```
 
 ### Skill Review Requirements
 
@@ -79,13 +90,6 @@ Reviewers should verify:
 - Appropriate tool permissions
 - Well-documented usage examples
 - Following progressive disclosure (overview first, details later)
-
-### Creating a New Plugin
-
-1. Create a directory under `plugins/`
-2. Add `.claude-plugin/plugin.json` with plugin metadata
-3. Add skills, commands, or agents as needed
-4. Update the root `marketplace.json` if creating a standalone plugin
 
 ## License
 
