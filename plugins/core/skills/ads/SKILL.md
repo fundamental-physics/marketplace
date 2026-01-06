@@ -7,6 +7,8 @@ description: Use when the user mentions 'ADS', 'NASA ADS', 'Astrophysics Data Sy
 
 Search and retrieve papers from NASA's Astrophysics Data System (ADS).
 
+**Requires**: `requests` (`pip install requests`)
+
 ## Setup
 
 ADS requires an API token for authentication.

@@ -7,6 +7,8 @@ description: Use when the user mentions 'arxiv' or asks to find, search for, or 
 
 Download and view arXiv paper sources using the `arxiv` command-line tool.
 
+**Requires**: `requests` (`pip install requests`)
+
 ## ArXiv ID Format
 
 - Modern: `YYMM.NNNNN` (e.g., `2301.07041`)

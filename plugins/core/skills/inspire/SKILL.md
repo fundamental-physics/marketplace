@@ -7,6 +7,8 @@ description: Use when the user mentions 'INSPIRE', 'INSPIRE-HEP', 'inspirehep', 
 
 Search and retrieve papers from INSPIRE-HEP, the high-energy physics literature database.
 
+**Requires**: `requests` (`pip install requests`)
+
 ## Record Identifiers
 
 INSPIRE accepts multiple identifier types:
