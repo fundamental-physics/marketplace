@@ -1,7 +1,6 @@
 ---
 name: inspire
 description: Use when the user mentions 'INSPIRE', 'INSPIRE-HEP', 'inspirehep', or asks to search high-energy physics literature, find HEP papers, get citation counts, or retrieve BibTeX from INSPIRE. Specializes in particle physics, quantum field theory, and related fields.
-allowed-tools: []
 ---
 
 # INSPIRE-HEP Search and Retrieval Skill
@@ -19,38 +18,38 @@ INSPIRE accepts multiple identifier types:
 
 ```bash
 # Get a record by INSPIRE ID
-python $SKILL_DIR/scripts/inspire.py 451647
+python scripts/inspire.py 451647
 
 # Get by arXiv ID
-python $SKILL_DIR/scripts/inspire.py 1207.7214
+python scripts/inspire.py 1207.7214
 
 # Get by DOI
-python $SKILL_DIR/scripts/inspire.py 10.1103/PhysRevLett.19.1264
+python scripts/inspire.py 10.1103/PhysRevLett.19.1264
 
 # Get BibTeX
-python $SKILL_DIR/scripts/inspire.py 1207.7214 --format bibtex
+python scripts/inspire.py 1207.7214 --format bibtex
 ```
 
 ## Searching
 
 ```bash
 # Search by author (SPIRES syntax)
-python $SKILL_DIR/scripts/inspire.py --search "a E.Witten.1"
+python scripts/inspire.py --search "a E.Witten.1"
 
 # Search by title
-python $SKILL_DIR/scripts/inspire.py --search "t dark matter"
+python scripts/inspire.py --search "t dark matter"
 
 # Search by arXiv category
-python $SKILL_DIR/scripts/inspire.py --search "arXiv:hep-th"
+python scripts/inspire.py --search "arXiv:hep-th"
 
 # Combined search
-python $SKILL_DIR/scripts/inspire.py --search "a Maldacena and t AdS/CFT"
+python scripts/inspire.py --search "a Maldacena and t AdS/CFT"
 
 # Most cited results
-python $SKILL_DIR/scripts/inspire.py --search "a Hawking" --sort mostcited
+python scripts/inspire.py --search "a Hawking" --sort mostcited
 
 # Limit results
-python $SKILL_DIR/scripts/inspire.py --search "t supersymmetry" -n 5
+python scripts/inspire.py --search "t supersymmetry" -n 5
 ```
 
 ### Search Query Syntax (SPIRES-compatible)
@@ -70,35 +69,35 @@ Boolean operators: `and`, `or`, `not`
 
 ```bash
 # Get papers citing a record
-python $SKILL_DIR/scripts/inspire.py 1207.7214 --citations
+python scripts/inspire.py 1207.7214 --citations
 
 # Top 20 citing papers
-python $SKILL_DIR/scripts/inspire.py 1207.7214 --citations -n 20
+python scripts/inspire.py 1207.7214 --citations -n 20
 ```
 
 ## Output Formats
 
 ```bash
 # JSON (default - shows metadata)
-python $SKILL_DIR/scripts/inspire.py 1207.7214
+python scripts/inspire.py 1207.7214
 
 # BibTeX
-python $SKILL_DIR/scripts/inspire.py 1207.7214 --format bibtex
+python scripts/inspire.py 1207.7214 --format bibtex
 
 # LaTeX (European style)
-python $SKILL_DIR/scripts/inspire.py 1207.7214 --format latex-eu
+python scripts/inspire.py 1207.7214 --format latex-eu
 
 # LaTeX (US style)
-python $SKILL_DIR/scripts/inspire.py 1207.7214 --format latex-us
+python scripts/inspire.py 1207.7214 --format latex-us
 ```
 
 ## Typical Workflow
 
-1. Search for papers: `python $SKILL_DIR/scripts/inspire.py --search "a Author"`
+1. Search for papers: `python scripts/inspire.py --search "a Author"`
 2. Note the INSPIRE recid or arXiv ID
-3. Get full details: `python $SKILL_DIR/scripts/inspire.py <id>`
-4. Get BibTeX for citation: `python $SKILL_DIR/scripts/inspire.py <id> --format bibtex`
-5. Check citations: `python $SKILL_DIR/scripts/inspire.py <id> --citations`
+3. Get full details: `python scripts/inspire.py <id>`
+4. Get BibTeX for citation: `python scripts/inspire.py <id> --format bibtex`
+5. Check citations: `python scripts/inspire.py <id> --citations`
 
 ## Rate Limits
 

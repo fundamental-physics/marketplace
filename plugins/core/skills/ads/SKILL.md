@@ -1,7 +1,6 @@
 ---
 name: ads
 description: Use when the user mentions 'ADS', 'NASA ADS', 'Astrophysics Data System', or asks to search astronomy/astrophysics literature, find papers by bibcode, get citation counts from ADS, or retrieve BibTeX from the ADS database.
-allowed-tools: []
 ---
 
 # NASA ADS Search and Retrieval Skill
@@ -47,38 +46,38 @@ ADS uses bibcodes as unique identifiers:
 
 ```bash
 # Get a record by bibcode
-python $SKILL_DIR/scripts/ads.py 2019ApJ...882L..12P
+python scripts/ads.py 2019ApJ...882L..12P
 
 # Get BibTeX
-python $SKILL_DIR/scripts/ads.py 2019ApJ...882L..12P --format bibtex
+python scripts/ads.py 2019ApJ...882L..12P --format bibtex
 ```
 
 ## Searching
 
 ```bash
 # Search by author
-python $SKILL_DIR/scripts/ads.py --search "author:Einstein"
+python scripts/ads.py --search "author:Einstein"
 
 # Search by first author only
-python $SKILL_DIR/scripts/ads.py --search "author:^Hawking"
+python scripts/ads.py --search "author:^Hawking"
 
 # Search by title
-python $SKILL_DIR/scripts/ads.py --search 'title:"dark energy"'
+python scripts/ads.py --search 'title:"dark energy"'
 
 # Search by abstract
-python $SKILL_DIR/scripts/ads.py --search 'abs:"gravitational waves"'
+python scripts/ads.py --search 'abs:"gravitational waves"'
 
 # Search by year range
-python $SKILL_DIR/scripts/ads.py --search "author:Penrose year:2015-2020"
+python scripts/ads.py --search "author:Penrose year:2015-2020"
 
 # Search by journal
-python $SKILL_DIR/scripts/ads.py --search "bibstem:ApJ year:2023"
+python scripts/ads.py --search "bibstem:ApJ year:2023"
 
 # Combined search
-python $SKILL_DIR/scripts/ads.py --search 'author:Planck title:"cosmological parameters"'
+python scripts/ads.py --search 'author:Planck title:"cosmological parameters"'
 
 # Limit results
-python $SKILL_DIR/scripts/ads.py --search "author:Witten" -n 5
+python scripts/ads.py --search "author:Witten" -n 5
 ```
 
 ### Search Query Syntax
@@ -114,29 +113,29 @@ Boolean operators: `AND` (default), `OR`, `NOT`, `-` (negation)
 
 ```bash
 # Get papers citing a record
-python $SKILL_DIR/scripts/ads.py 2019ApJ...882L..12P --citations
+python scripts/ads.py 2019ApJ...882L..12P --citations
 
 # Top 20 citing papers
-python $SKILL_DIR/scripts/ads.py 2019ApJ...882L..12P --citations -n 20
+python scripts/ads.py 2019ApJ...882L..12P --citations -n 20
 ```
 
 ## Output Formats
 
 ```bash
 # Default (shows metadata)
-python $SKILL_DIR/scripts/ads.py 2019ApJ...882L..12P
+python scripts/ads.py 2019ApJ...882L..12P
 
 # BibTeX
-python $SKILL_DIR/scripts/ads.py 2019ApJ...882L..12P --format bibtex
+python scripts/ads.py 2019ApJ...882L..12P --format bibtex
 ```
 
 ## Typical Workflow
 
-1. Search for papers: `python $SKILL_DIR/scripts/ads.py --search "author:Name"`
+1. Search for papers: `python scripts/ads.py --search "author:Name"`
 2. Note the bibcode
-3. Get full details: `python $SKILL_DIR/scripts/ads.py <bibcode>`
-4. Get BibTeX: `python $SKILL_DIR/scripts/ads.py <bibcode> --format bibtex`
-5. Check citations: `python $SKILL_DIR/scripts/ads.py <bibcode> --citations`
+3. Get full details: `python scripts/ads.py <bibcode>`
+4. Get BibTeX: `python scripts/ads.py <bibcode> --format bibtex`
+5. Check citations: `python scripts/ads.py <bibcode> --citations`
 
 ## Rate Limits
 

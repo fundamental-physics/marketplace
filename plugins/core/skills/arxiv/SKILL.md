@@ -1,7 +1,6 @@
 ---
 name: arxiv
 description: Use when the user mentions 'arxiv' or asks to find, search for, or download arxiv papers (by arxiv ID, author name, or topic), get paper source code, or retrieve LaTeX files from arxiv. Can search for papers to find arxiv IDs when only author/topic is provided, then download them. Prefer source format over PDF.
-allowed-tools: []
 ---
 
 # ArXiv Search and Download Skill
@@ -19,18 +18,18 @@ Use the `arxiv` CLI tool bundled with this skill:
 
 ```bash
 # View all LaTeX source files (.tex, .bib, .bbl) with syntax highlighting
-python $SKILL_DIR/scripts/arxiv.py 2301.07041
+python scripts/arxiv.py 2301.07041
 
 # Save entire source to a directory
-python $SKILL_DIR/scripts/arxiv.py 2301.07041 --save
+python scripts/arxiv.py 2301.07041 --save
 
 # List files in the archive
-python $SKILL_DIR/scripts/arxiv.py 2301.07041 --list
+python scripts/arxiv.py 2301.07041 --list
 
 # View only specific file types
-python $SKILL_DIR/scripts/arxiv.py 2301.07041 --tex   # Only .tex files
-python $SKILL_DIR/scripts/arxiv.py 2301.07041 --bib   # Only .bib files
-python $SKILL_DIR/scripts/arxiv.py 2301.07041 --bbl   # Only .bbl files
+python scripts/arxiv.py 2301.07041 --tex   # Only .tex files
+python scripts/arxiv.py 2301.07041 --bib   # Only .bib files
+python scripts/arxiv.py 2301.07041 --bbl   # Only .bbl files
 ```
 
 The default output (no flags) wraps each file in markdown code blocks with appropriate language tags (latex/bibtex).
@@ -39,19 +38,19 @@ The default output (no flags) wraps each file in markdown code blocks with appro
 
 ```bash
 # Search by author
-python $SKILL_DIR/scripts/arxiv.py --search "au:Handley"
+python scripts/arxiv.py --search "au:Handley"
 
 # Search by title
-python $SKILL_DIR/scripts/arxiv.py --search "ti:cosmology"
+python scripts/arxiv.py --search "ti:cosmology"
 
 # Search by category
-python $SKILL_DIR/scripts/arxiv.py --search "cat:astro-ph.CO"
+python scripts/arxiv.py --search "cat:astro-ph.CO"
 
 # Combined search
-python $SKILL_DIR/scripts/arxiv.py --search "ti:cosmology+AND+au:Planck"
+python scripts/arxiv.py --search "ti:cosmology+AND+au:Planck"
 
 # Limit results (default 10)
-python $SKILL_DIR/scripts/arxiv.py --search "au:Hinton" -n 5
+python scripts/arxiv.py --search "au:Hinton" -n 5
 ```
 
 ### Search Query Prefixes
@@ -66,9 +65,9 @@ python $SKILL_DIR/scripts/arxiv.py --search "au:Hinton" -n 5
 
 ## Typical Workflow
 
-1. Search for papers: `python $SKILL_DIR/scripts/arxiv.py --search "au:Author"`
+1. Search for papers: `python scripts/arxiv.py --search "au:Author"`
 2. Pick an arxiv ID from results
-3. View the source: `python $SKILL_DIR/scripts/arxiv.py <id>`
+3. View the source: `python scripts/arxiv.py <id>`
 4. Use `--save` to extract files locally if needed
 
 ## Integration with LLM Analysis
@@ -76,7 +75,7 @@ python $SKILL_DIR/scripts/arxiv.py --search "au:Hinton" -n 5
 After saving source with `--save`:
 
 ```bash
-python $SKILL_DIR/scripts/arxiv.py 2301.07041 --save
+python scripts/arxiv.py 2301.07041 --save
 code2prompt 2301.07041 --include "*.tex" --output-file /tmp/paper.md
 ```
 
