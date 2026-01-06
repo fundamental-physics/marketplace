@@ -33,16 +33,11 @@ Core tools for fundamental physics research: literature access and paper managem
 
 ## Installation
 
-Add the plugin marketplace to your Claude Code configuration:
+Within Claude Code install directly with:
 
-```bash
-claude mcp add-json fundamental-physics '{
-  "type": "local",
-  "path": "/path/to/this/repo"
-}'
 ```
-
-Or install individual plugins by adding them to your `~/.claude/plugins.json`.
+/plugin marketplace add git@github.com:fundamental-physics/marketplace.git
+```
 
 ## Repository Structure
 
