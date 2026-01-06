@@ -5,8 +5,8 @@
   },
   "plugins": [
     {
-      "name": "astro-ph",
-      "source": "./plugins/astro-ph"
+      "name": "astro-ph.CO",
+      "source": "./plugins/astro-ph.CO"
     }
   ]
 }
