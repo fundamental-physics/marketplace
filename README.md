@@ -20,14 +20,16 @@ Astrophysics analysis workflows, scientific computing, and astronomical data pro
 **Skills:**
 - `astrophysics` - Observational astronomy, cosmological analysis, FITS/HDF5 data handling, spectroscopy, photometry
 
-### core (pending)
+### core
 
-Core tools for fundamental physics research.
+Core tools for fundamental physics research: literature access and paper management.
 
 **Skills:**
-- `arxiv` - Search and download arXiv papers
-- `inspire` - INSPIRE-HEP literature search for high-energy physics
-- `ads` - NASA ADS search for astronomy/astrophysics literature
+- `arxiv` - Search arXiv and download paper source (LaTeX/BibTeX)
+- `inspire` - INSPIRE-HEP search, citations, BibTeX for high-energy physics
+- `ads` - NASA ADS search, citations, BibTeX for astronomy/astrophysics (requires API token)
+
+**Dependencies:** `requests` (`pip install requests`)
 
 ## Installation
 
@@ -51,10 +53,10 @@ plugins/
     │   └── plugin.json       # Plugin manifest
     ├── skills/
     │   └── <skill-name>/
-    │       └── SKILL.md      # Skill documentation
+    │       ├── SKILL.md      # Skill documentation
+    │       └── scripts/      # Optional: bundled scripts
     ├── commands/             # Optional: slash commands
-    ├── agents/               # Optional: subagents
-    └── scripts/              # Optional: supporting scripts
+    └── agents/               # Optional: subagents
 ```
 
 ## Contributing
