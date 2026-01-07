@@ -11,6 +11,10 @@
     {
       "name": "astro-ph.CO",
       "source": "./plugins/astro-ph.CO"
+    },
+    {
+      "name": "gr-qc",
+      "source": "./plugins/gr-qc"
     }
   ]
 }

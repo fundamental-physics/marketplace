@@ -33,6 +33,15 @@ Core tools for fundamental physics research: literature access, data repositorie
 
 **Dependencies:** `requests` (`pip install requests`)
 
+### gr-qc
+
+General relativity and quantum cosmology: gravitational wave data and related tools.
+
+**Skills:**
+- `gwosc` - Search gravitational wave events, get parameters, download strain data from LIGO/Virgo/KAGRA
+
+**Dependencies:** `requests` (`pip install requests`)
+
 ## Installation
 
 Within Claude Code install directly with:
