@@ -231,7 +231,8 @@ Skill creation involves these steps:
 3. Initialize the skill (run init_skill.py)
 4. Edit the skill (implement resources and write SKILL.md)
 5. Package the skill (run package_skill.py)
-6. Iterate based on real usage
+6. Test with a subagent in a clean environment
+7. Iterate based on real usage
 
 Follow these steps in order, skipping only if there is a clear reason why they are not applicable.
 
@@ -375,7 +376,34 @@ The packaging script will:
 
 If validation fails, fix the errors and run the packaging command again.
 
-### Step 6: Iterate
+### Step 6: Test with a Subagent
+
+Before considering the skill complete, test it with a fresh subagent in a clean environment. This step is critical because documentation that seems clear to the skill creator may contain subtle errors or ambiguities that cause agents to fail.
+
+**Testing workflow:**
+
+1. Spawn a subagent with access only to the new skill (no prior context)
+2. Have the subagent install the package (e.g., `uv pip install <package>`)
+3. Have the subagent execute a quickstart-style example from the skill
+4. Verify the example runs to completion without errors
+
+**If the test fails:**
+
+1. Analyze the error - Is it a documentation issue, API misunderstanding, or missing information?
+2. Update the skill to fix the issue
+3. Re-run the subagent test with a fresh instance
+4. Repeat until the subagent succeeds on first attempt
+
+**Common issues discovered through subagent testing:**
+
+- API patterns that seem correct but don't match actual library behavior
+- Missing import statements or dependencies in examples
+- Ambiguous instructions that the skill creator understood but a fresh agent misinterprets
+- Examples that work in isolation but fail when combined
+
+This step catches issues that human review often misses. A skill is only ready for release when a fresh subagent can use it successfully without prior context.
+
+### Step 7: Iterate
 
 After testing the skill, users may request improvements. Often this happens right after using the skill, with fresh context of how the skill performed.
 
