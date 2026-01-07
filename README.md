@@ -30,6 +30,7 @@ Core tools for fundamental physics research: literature access, data repositorie
 - `ads` - NASA ADS search, citations, BibTeX for astronomy/astrophysics (requires API token)
 - `zenodo` - Search and download datasets, software, and research artifacts with DOIs
 - `hepdata` - Download experimental data tables from HEP publications (cross-sections, limits, etc.)
+- `science-skill-creator` - Guide for creating effective skills for fundamental physics research
 
 **Dependencies:** `requests` (`pip install requests`)
 
@@ -40,6 +41,24 @@ Within Claude Code install directly with:
 ```
 /plugin marketplace add git@github.com:fundamental-physics/marketplace.git
 ```
+
+## Creating Your Own Physics Skills
+
+Want to create a custom skill for your research workflow? Use the `science-skill-creator`:
+
+1. Ask Claude: "Help me create a new skill for [your physics workflow]"
+2. The science-skill-creator will guide you through:
+   - Understanding your use case with concrete examples
+   - Planning reusable components (scripts, references, assets)
+   - Implementing the skill following physics research patterns
+   - Testing and iterating on the skill
+
+**Example usage:**
+- "Help me create a skill for running JAX-based nested sampling on my cosmology models"
+- "I need a skill for processing LIGO gravitational wave data"
+- "Create a skill for lattice QCD simulations with gauge field configurations"
+
+The skill creator follows a physics workflow model (Research → Science → Inference → Visualization) and helps you build skills that integrate seamlessly with your research pipeline.
 
 ## Repository Structure
 
