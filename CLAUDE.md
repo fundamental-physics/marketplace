@@ -17,7 +17,7 @@ Skills are markdown files with YAML frontmatter that provide domain knowledge to
 1. **Frontmatter required fields:**
    - `name` - Short identifier
    - `description` - When to trigger (include phrases like "use when user asks to...")
-   - `allowed-tools` (optional) - Tool restrictions
+   - `allowed-tools` (optional) - Tool restrictions. Include when the skill involves potentially destructive operations (Write, Edit) or when you want to limit scope. Omit for read-only/query skills that use standard tools.
 
 2. **Content structure:**
    - Start with a brief overview
