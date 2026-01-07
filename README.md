@@ -32,7 +32,7 @@ Core tools for fundamental physics research: literature access, data repositorie
 - `hepdata` - Download experimental data tables from HEP publications (cross-sections, limits, etc.)
 - `science-skill-creator` - Guide for creating effective skills for fundamental physics research
 
-**Dependencies:** `requests` (`pip install requests`)
+**Dependencies:** `requests`, `pyyaml` (`pip install requests pyyaml`)
 
 ## Installation
 
