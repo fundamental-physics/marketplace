@@ -183,8 +183,10 @@ samples.plot_2d(axes,
 
 ```python
 import matplotlib.pyplot as plt
+from anesthetic import make_2d_axes
 
-fig, axes = samples.plot_2d(['x0', 'x1', 'x2'])
+fig, axes = make_2d_axes(['x0', 'x1', 'x2'])
+samples.plot_2d(axes)
 fig.savefig('corner_plot.png', dpi=150, bbox_inches='tight')
 fig.savefig('corner_plot.pdf', bbox_inches='tight')
 plt.close(fig)

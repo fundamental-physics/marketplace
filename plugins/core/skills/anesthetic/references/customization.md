@@ -173,8 +173,10 @@ axes.iloc[1, 0].legend(loc='upper right')
 
 ```python
 import matplotlib.pyplot as plt
+from anesthetic import make_2d_axes
 
-fig, axes = samples.plot_2d(['x0', 'x1'])
+fig, axes = make_2d_axes(['x0', 'x1'])
+samples.plot_2d(axes)
 
 # Set limits on specific axes
 axes.loc['x1', 'x0'].set_xlim(0, 1)
