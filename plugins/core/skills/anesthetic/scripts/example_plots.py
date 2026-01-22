@@ -46,9 +46,9 @@ def main():
         print(f"Using first 5 parameters for plots")
         params = params[:5]
 
-    # 1. Corner plot
+    # 1. Corner plot (lower triangle only - recommended for publication)
     print("Creating corner plot...")
-    fig, axes = make_2d_axes(params)
+    fig, axes = make_2d_axes(params, upper=False)
     samples.plot_2d(axes, kind='kde')
     fig.savefig('corner_plot.png', dpi=150, bbox_inches='tight')
     plt.close(fig)
@@ -67,7 +67,7 @@ def main():
         print("Creating prior vs posterior comparison...")
         prior = samples.prior()
 
-        fig, axes = make_2d_axes(params[:3] if len(params) >= 3 else params)
+        fig, axes = make_2d_axes(params[:3] if len(params) >= 3 else params, upper=False)
         prior.plot_2d(axes, kind='kde', label='Prior', alpha=0.5)
         samples.plot_2d(axes, kind='kde', label='Posterior')
 
